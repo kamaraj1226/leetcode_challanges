@@ -9,6 +9,7 @@ template_string = """
 # pylint: disable=missing-function-docstring
 # pylint: disable=use-dict-literal
 # pylint: disable=invalid-name
+# pylint: disable=import-outside-toplevel
 
 
 def solution(): ...
