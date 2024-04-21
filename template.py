@@ -2,6 +2,8 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=invalid-name
 
+import argparse
+
 template_string = """
 # pylint: disable=missing-module-docstring
 # pylint: disable=missing-function-docstring
@@ -27,12 +29,17 @@ if __name__ == "__main__":
 """
 
 
-def main():
-    _file = input("File Name: ")
+def main(file_name):
+    # _file = input("File Name: ")
+
+    _file = file_name.strip().replace(".", "").replace(" ", "_") + ".py"
 
     with open(_file, "w", encoding="utf-8") as file:
         file.write(template_string)
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-n", "--name", action="store", required=True, help="file name")
+    args = parser.parse_args()
+    main(args.name)
