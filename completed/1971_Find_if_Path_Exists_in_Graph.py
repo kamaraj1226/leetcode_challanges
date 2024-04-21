@@ -38,6 +38,7 @@ def solution(n, edges, source, destination):
     visited = set()
     while len(stack) > 0:
         vertex = stack.pop()
+        visited.add(vertex)
         if vertex == destination:
             return True
 
@@ -46,10 +47,8 @@ def solution(n, edges, source, destination):
             continue
 
         for vertex in vertices:
-            if vertex in visited:
-                continue
-            stack.append(vertex)
-            visited.add(vertex)
+            if vertex not in visited:
+                stack.append(vertex)
 
     return False
 
