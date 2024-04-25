@@ -3,6 +3,7 @@
 # pylint: disable=use-dict-literal
 # pylint: disable=invalid-name
 # pylint: disable=import-outside-toplevel
+# pylint: disable=unused-argument
 
 
 def solution(n, edges):
