@@ -5,6 +5,19 @@
 # pylint: disable=import-outside-toplevel
 
 
+def another_solution(c):
+    import math
+
+    _c = int(math.sqrt(c))
+
+    for a in range(_c + 1):
+        b = math.sqrt(c - a * a)
+
+        if b.is_integer():
+            return True
+    return False
+
+
 def solution(c):
 
     import math
@@ -35,7 +48,7 @@ def main():
     ]
     for i, test_case in enumerate(test_cases):
         c, required_output = test_case.values()
-        output = solution(c)
+        output = another_solution(c)
 
         print(f"Test {i+1}: {'pass' if output== required_output else 'failed'}")
 
